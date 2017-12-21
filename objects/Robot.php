@@ -17,6 +17,7 @@ class Robot implements RobotInterface
 		$this->position = ['x'=>$x, 'y'=>$y];
 		$this->facing = $facing;
 		$this->is_placed = true;
+		$this->checkPosition();
 	}
 
 	private function checkStatus($is_placed)
