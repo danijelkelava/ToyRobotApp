@@ -8,30 +8,6 @@ spl_autoload_register(function ($class_name){
 
 $robot = new Robot();
 
-//$robot->place(0,0, 'WEST');
-/*
-var_dump($robot->report());
-echo "<br/>";
-
-$robot->move();
-$robot->right();
-$robot->move();
-var_dump($robot->report());
-echo "<br/>";*/
-/*
-$handle = fopen("test/commands.txt", "r");
-
-if ($handle) {
-	$lines = explode("\n", fread($handle, filesize("test/commands.txt")));
-	//var_dump($lines);	
-	foreach ($lines as $line) {
-		$new_lines[] = explode(" ", $line);
-	}
-	echo "<pre>";
-	print_r($new_lines);
-	echo "</pre>";
-}*/
-
 $handle = fopen("test/commands.txt", "r");
 if ($handle) {
     while (($line = fgets($handle)) !== false) {

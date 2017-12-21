@@ -67,7 +67,7 @@ class Robot implements RobotInterface
 				$this->position['x']--;
 				break;
 			default:
-				echo "FACE ME UP, I CAN'T GO ANYWHERE!!!<br/>";
+				echo "PLACE ME PROPERLY, I CAN'T GO ANYWHERE!!!<br/>";
 				break;
 		}
 
