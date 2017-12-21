@@ -31,19 +31,19 @@ class Robot implements RobotInterface
 
 	private function checkPosition()
 	{
-		if ($this->position['x'] < Table::$size['min_x'] && $this->facing == 'WEST') {
+		if ($this->position['x'] < Table::$size['min_x']) {
 			echo "STOP</br>";
 			$this->position['x'] = Table::$size['min_x'];
 
-		}elseif ($this->position['x'] > Table::$size['max_x'] && $this->facing == 'EAST') {
+		}elseif ($this->position['x'] > Table::$size['max_x']) {
 			echo "STOP</br>";
 			$this->position['x'] = Table::$size['max_x'];
 
-		}elseif ($this->position['y'] < Table::$size['min_y'] && $this->facing == 'SOUTH') {
+		}elseif ($this->position['y'] < Table::$size['min_y']) {
 			echo "STOP</br>";
 			$this->position['y'] = Table::$size['min_y'];
 
-		}elseif ($this->position['y'] > Table::$size['max_y'] && $this->facing == 'NORTH') {
+		}elseif ($this->position['y'] > Table::$size['max_y']) {
 			echo "STOP</br>";
 			$this->position['y'] = Table::$size['max_y'];
 		}
