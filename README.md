@@ -12,7 +12,7 @@ The application is a simulation of a toy robot moving on a square tabletop, of d
 	<li>REPORT</li>
 </ul>
 
-# Remove white space from the end of each line in commands.txt file or commands will be ignored!!!!
+<h4>Remove white space from the end of each line in commands.txt file or commands will be ignored!!!!</h4>
 
 PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST. . The origin (0,0) can be considered to be the SOUTH WEST most corner. . The first valid command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE command. The application should discard all commands in the sequence until a valid PLACE command has been executed. . MOVE will move the toy robot one unit forward in the direction it is currently facing. . LEFT and RIGHT will rotate the robot 90 degrees in the specified direction without changing the position of the robot. . REPORT will announce the X,Y and orientation of the robot. . A robot that is not on the table can choose to ignore the MOVE, LEFT, RIGHT and REPORT commands. . Provide test data to exercise the application.
 
