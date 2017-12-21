@@ -36,7 +36,7 @@ class Robot implements RobotInterface
 			$this->position['x'] = Table::$size['min_x'];
 
 		}elseif ($this->position['x'] > Table::$size['max_x']) {
-			echo "STOP, X CAN'T BE > 0</br>";
+			echo "STOP, X CAN'T BE > 5</br>";
 			$this->position['x'] = Table::$size['max_x'];
 
 		}elseif ($this->position['y'] < Table::$size['min_y']) {
@@ -44,7 +44,7 @@ class Robot implements RobotInterface
 			$this->position['y'] = Table::$size['min_y'];
 
 		}elseif ($this->position['y'] > Table::$size['max_y']) {
-			echo "STOP, Y CAN'T BE > 0</br>";
+			echo "STOP, Y CAN'T BE > 5</br>";
 			$this->position['y'] = Table::$size['max_y'];
 		}
 	}
@@ -67,7 +67,7 @@ class Robot implements RobotInterface
 				$this->position['x']--;
 				break;
 			default:
-				echo "PLACE ME PROPERLY, I CAN'T GO ANYWHERE!!!<br/>";
+				echo "PLACE ME PROPERLY OR I CAN'T GO ANYWHERE!!!<br/>";
 				break;
 		}
 

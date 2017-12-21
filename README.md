@@ -4,7 +4,14 @@ The application is a simulation of a toy robot moving on a square tabletop, of d
 
 <h2>Create an application that can read in commands of the following form</h2>
 
-PLACE X,Y,F MOVE LEFT RIGHT REPORT
+PLACE X,Y,F
+MOVE
+LEFT
+RIGHT
+REPORT
+
+There can't be white space after the line of the command or command wont work!!!!
+
 PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST. . The origin (0,0) can be considered to be the SOUTH WEST most corner. . The first valid command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE command. The application should discard all commands in the sequence until a valid PLACE command has been executed. . MOVE will move the toy robot one unit forward in the direction it is currently facing. . LEFT and RIGHT will rotate the robot 90 degrees in the specified direction without changing the position of the robot. . REPORT will announce the X,Y and orientation of the robot. . A robot that is not on the table can choose to ignore the MOVE, LEFT, RIGHT and REPORT commands. . Provide test data to exercise the application.
 
 <h3>Constraints:</h3>
@@ -17,4 +24,5 @@ The toy robot must not fall off the table during movement. This also includes th
 	<li>b) PLACE 0,0,NORTH LEFT REPORT Output: 0,0,WEST</li>
 	<li>c) PLACE 1,2,EAST MOVE MOVE LEFT MOVE REPORT Output: 3,3,NORTH</li>
 </ul>
+
 
