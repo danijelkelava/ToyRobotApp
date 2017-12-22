@@ -2,15 +2,12 @@
 
 class Robot implements RobotInterface
 {
+
 	private $position = ['x'=>null, 'y'=>null];
 	private $facing;
 	private $valid_facing = ["NORTH", "EAST", "SOUTH", "WEST"];
 	private $report = ['position'=>null, 'facing'=>null];
-
-	public function __construct()
-	{
-		$this->is_placed = false;
-	}
+	
 
 	public function place($x, $y, $facing)
 	{	
