@@ -4,8 +4,8 @@ class Robot implements RobotInterface
 {
 	private $is_placed;
 	private $position = ['x'=>null, 'y'=>null];
-	private $facing; 
-	private $valid_facing = ['NORTH', 'EAST', 'SOUTH', 'WEST'];
+	private $facing;
+	private $valid_facing = ["NORTH", "EAST", "SOUTH", "WEST"];
 	private $report = ['position'=>null, 'facing'=>null];
 
 	public function __construct()
@@ -14,31 +14,31 @@ class Robot implements RobotInterface
 	}
 
 	public function place($x, $y, $facing)
-	{
-		$this->position = ['x'=>$x, 'y'=>$y];
-		$this->is_placed = true;
-		$this->checkValidFacing($facing);
+	{	
+		$this->checkPlace($x, $y, $facing);
 		$this->checkPosition();
+	}
+
+	private function checkPlace($x, $y, $facing)
+	{
+		if (in_array($facing, $this->valid_facing) && is_numeric($x) && is_numeric($y)) {
+			$this->position = ['x'=>$x, 'y'=>$y];	
+			$this->facing = $facing;
+			$this->is_placed = true;
+		}else{
+			echo "INVALID PLACE COMMAND!";
+			die();
+		}
 	}
 
 	private function checkStatus($is_placed)
 	{
 		if ($is_placed == false) {
-			echo "PLACE your robot!!!";
+			echo "PLACE YOUR ROBOT!!!";
 			die();
 		}
 		return true;
 	}
-	
-    private function checkValidFacing($facing)
-    {
-    	if (in_array($facing, $this->valid_facing)) {
-			$this->facing = $facing;
-		}else{
-			echo "PLACE ME PROPERLY OR I CAN'T GO ANYWHERE!!!<br/>";
-			die();
-		}
-    }
 
 	private function checkPosition()
 	{
@@ -61,9 +61,7 @@ class Robot implements RobotInterface
 	}
 
 	public function move()
-	{
-		$this->checkStatus($this->is_placed);
-		
+	{		
 		switch ($this->facing) {
 			case 'NORTH':
 				$this->position['y']++;
@@ -79,7 +77,6 @@ class Robot implements RobotInterface
 				break;
 			default:
 				echo "PLACE ME PROPERLY OR I CAN'T GO ANYWHERE!!!<br/>";
-				die();
 				break;
 		}
 
@@ -87,9 +84,7 @@ class Robot implements RobotInterface
 	}
 
 	public function left()
-	{
-		$this->checkStatus($this->is_placed);
-        
+	{        
 		switch ($this->facing) {
 			case 'NORTH':
 				$this->facing = "WEST";
@@ -108,8 +103,6 @@ class Robot implements RobotInterface
 
 	public function right()
 	{
-		$this->checkStatus($this->is_placed);
-
 		switch ($this->facing) {
 			case 'NORTH':
 				$this->facing = "EAST";

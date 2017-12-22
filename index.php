@@ -17,8 +17,11 @@ if ($handle) {
         $params = explode(",", $lineSpaceBreak[1]);
 
         foreach ($lineSpaceBreak as $key => $value){
-            if (trim($lineSpaceBreak[$key]) == "PLACE") {
-                $robot->place(trim($params[0]), trim($params[1]), trim($params[2]));
+            if (trim($lineSpaceBreak[0]) != "PLACE") {
+                echo "INVALID PLACE COMMAND!";
+                return;
+            }elseif (trim($lineSpaceBreak[$key]) == "PLACE") {
+                @$robot->place(trim($params[0]), trim($params[1]), trim($params[2]));                
             }elseif (trim($lineSpaceBreak[$key]) == "MOVE") {
                 $robot->move();
             }elseif (trim($lineSpaceBreak[$key]) == "LEFT"){
