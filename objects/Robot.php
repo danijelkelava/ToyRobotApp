@@ -7,7 +7,7 @@ class Robot implements RobotInterface
 	private $facing;
 	private $valid_facing = ["NORTH", "EAST", "SOUTH", "WEST"];
 	private $report = ['position'=>null, 'facing'=>null];
-	
+
 
 	public function place($x, $y, $facing)
 	{	
@@ -20,7 +20,6 @@ class Robot implements RobotInterface
 		if (in_array($facing, $this->valid_facing) && is_numeric($x) && is_numeric($y)) {
 			$this->position = ['x'=>$x, 'y'=>$y];	
 			$this->facing = $facing;
-			$this->is_placed = true;
 		}else{
 			echo "INVALID PLACE COMMAND!";
 			die();
