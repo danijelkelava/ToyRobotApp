@@ -4,7 +4,8 @@ class Robot implements RobotInterface
 {
 	private $is_placed;
 	private $position = ['x'=>null, 'y'=>null];
-	private $facing;
+	private $facing; 
+	private $valid_facing = ['NORTH', 'EAST', 'SOUTH', 'WEST'];
 	private $report = ['position'=>null, 'facing'=>null];
 
 	public function __construct()
@@ -15,8 +16,8 @@ class Robot implements RobotInterface
 	public function place($x, $y, $facing)
 	{
 		$this->position = ['x'=>$x, 'y'=>$y];
-		$this->facing = $facing;
 		$this->is_placed = true;
+		$this->checkValidFacing($facing);
 		$this->checkPosition();
 	}
 
@@ -28,6 +29,16 @@ class Robot implements RobotInterface
 		}
 		return true;
 	}
+
+    private function checkValidFacing($facing)
+    {
+    	if (in_array($facing, $this->valid_facing)) {
+			$this->facing = $facing;
+		}else{
+			echo "PLACE ME PROPERLY OR I CAN'T GO ANYWHERE!!!<br/>";
+			die();
+		}
+    }
 
 	private function checkPosition()
 	{
@@ -68,6 +79,7 @@ class Robot implements RobotInterface
 				break;
 			default:
 				echo "PLACE ME PROPERLY OR I CAN'T GO ANYWHERE!!!<br/>";
+				die();
 				break;
 		}
 
