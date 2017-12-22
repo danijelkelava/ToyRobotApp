@@ -29,7 +29,7 @@ class Robot implements RobotInterface
 		}
 		return true;
 	}
-
+	
     private function checkValidFacing($facing)
     {
     	if (in_array($facing, $this->valid_facing)) {
