@@ -10,7 +10,7 @@ $robot = new Robot();
 
 $handle = fopen("test/commands.txt", "r");
 if ($handle) {
-    while (($line = fgets($handle)) !== false && strlen($line) > 0) {
+    while (($line = fgets($handle)) !== false) {
         //var_dump($line);
         $lineSpaceBreak = explode(" ", $line);
         //var_dump($lineSpaceBreak);
