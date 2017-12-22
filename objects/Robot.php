@@ -2,7 +2,6 @@
 
 class Robot implements RobotInterface
 {
-	private $is_placed;
 	private $position = ['x'=>null, 'y'=>null];
 	private $facing;
 	private $valid_facing = ["NORTH", "EAST", "SOUTH", "WEST"];
@@ -29,15 +28,6 @@ class Robot implements RobotInterface
 			echo "INVALID PLACE COMMAND!";
 			die();
 		}
-	}
-
-	private function checkStatus($is_placed)
-	{
-		if ($is_placed == false) {
-			echo "PLACE YOUR ROBOT!!!";
-			die();
-		}
-		return true;
 	}
 
 	private function checkPosition()

@@ -36,7 +36,7 @@ if ($handle) {
         }        
     }
 } else {
-    echo "Can't open file!";
+    echo "CANT'T OPEN FILE!";
 }
 fclose($handle);
 
